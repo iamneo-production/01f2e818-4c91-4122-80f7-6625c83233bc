@@ -14,7 +14,7 @@ function Adminloandetails() {
     const { setIsAuthenticated } = useContext(AuthContext);
 
     const fetchLoans = async () => {
-         axios.get('https://8080-dadefbdfbeaeecfabeedbdebdadabbccceefdfb.project.examly.io/admin/getAllLoans')
+         axios.get('https://8080-eccfaacddbcfabeedbdebdadabbccceefdfb.project.examly.io/admin/getAllLoans')
         .then(response => {
             var res = response.data
             setLoans(res.filter(loan => loan.IsApproved !== null))})
@@ -32,7 +32,7 @@ function Adminloandetails() {
 
     const deleteLoan = async (id) => {
         console.log(id,'active2')
-        axios.delete(`https://8080-dadefbdfbeaeecfabeedbdebdadabbccceefdfb.project.examly.io/admin/deleteLoan/${id}`)
+        axios.delete(`https://8080-eccfaacddbcfabeedbdebdadabbccceefdfb.project.examly.io/admin/deleteLoan/${id}`)
         .then(res => {
             if(res.status === 200){
                 fetchLoans();
@@ -52,23 +52,20 @@ function Adminloandetails() {
 
     return (
         <>
-        <div className='body'><div><br/></div>
-        <Navbar bg="dark" variant="dark">
+        <div className='body'>
+        <Navbar className='text-light bg-primary'  >
                 <Navbar.Brand as={Link} to="/admin" className="brand-container">
-                    Business Loan Management 
-                    <br />
-                    <span className="brand-subtext">Admin</span>
+                   <h3> Agriculture Loan Management Application</h3> 
                 </Navbar.Brand>
-                <Nav className="mr-auto">
-                    <Nav.Link as={Link} to="/AppliedLoans">Applied Loans</Nav.Link>
-                    <Nav.Link as={Link} to="/LoanDetails">Loan Details</Nav.Link>
+                <Nav className="navbar-nav ml-auto mx-auto nav-types text-light">
+                    <Nav.Link as={Link} to="/Appliedloans">Applied Loans</Nav.Link>
+                    <Nav.Link as={Link} className='text-warning fw-bolder fs-3' to="/LoanDetails">Loan Details</Nav.Link>
+                    <Nav.Link as={Link} to="/">Logout</Nav.Link>
                 </Nav>
-                <Nav className="ms-auto">
-                    <Button className="logout-btn" variant="outline-light" as={Link} to="/" onClick={handleLogout}>Logout</Button>
-                </Nav>
+                
             <Outlet />
             </Navbar>
-          </div>
+        
           <div className="container mt-4">
             {loans.map(loan =>
                 <Card className="my-3 shadow" key={loan.Id}>
@@ -112,7 +109,9 @@ function Adminloandetails() {
                   </Button>
                 </Modal.Footer>
             </Modal>
+              </div>
         </>
+
     );
 
 };

@@ -5,16 +5,20 @@ function ApplyloanAuth(values) {
     const aadhar_pattern = /^[0-9]{12}$/
     const pan_pattern = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/
     const salary_pattern= /^[0-9]*$/
-    const amount_pattern= /^[0-9]*$/
-    const repay_pattern= /^[0-9]*$/
+    const amount_pattern= /^[0-9]{7}$/
+    const repay_pattern= /^[0-9]{2}$/
   
+    
+
     if (!values.ApplicantPhone) {
-        error.ApplicantPhone= "Mobile number can't be empty";
-    } else if (!mobilenumber_pattern.test(values.ApplicantPhone)) {
-        error.ApplicantPhone = "Invalid mobile number format";
-    } else {
-        error.ApplicantPhone="";
-    }
+        error.ApplicantPhone = "Mobile Number should not be empty";
+      } else if (!mobilenumber_pattern.test(values.ApplicantPhone)) {
+        error.ApplicantPhone = "Invalid Mobile Number format";
+      } else if (values.ApplicantPhone === "0000000000") {
+        error.ApplicantPhone = "Enter a valid mobile number";
+      } else {
+        error.ApplicantPhone = "";
+      }
   
     if(!values.ApplicantName) {
         error.ApplicantName="Name can't be empty";

@@ -14,7 +14,7 @@ function Customerprofile() {
   const navigate = useNavigate();
 
   const fetchUserProfile = async () => {
-    let url = `https://8080-cdfbadaabbeabbcfdaafcbdaebccfbaabccd.project.examly.io/user/getProfile/${email}`
+    let url = `https://8080-eccfaacddbcfabeedbdebdadabbccceefdfb.project.examly.io/user/getProfile/${email}`
     await axios.get(url)
         .then(res => {
           console.log(res)
@@ -57,7 +57,7 @@ function Customerprofile() {
   const editUserProfile = async (event) => {
     event.preventDefault();
     console.log(user,'Edited');
-    await axios.put(`https://8080-cdfbadaabbeabbcfdaafcbdaebccfbaabccd.project.examly.io/user/editProfile/${email}`, user)
+    await axios.put(`https://8080-eccfaacddbcfabeedbdebdadabbccceefdfb.project.examly.io/user/editProfile/${email}`, user)
         .then(res => {
           if (res.status === 200) {
             setEditing(false);
@@ -76,13 +76,12 @@ function Customerprofile() {
 
   return (
     <>
-      <div className='body'>
-      <div><br /></div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light mx-auto LoanidHead">
-          <div className="container-fluid">
-          <a className="navbar-brand">Bussines Loan</a>
+      
+        <nav className="navbar navbar-expand-lg bg-color mx-auto ">
+        
+          <Link to="/home" className="navbar-brand">Agriculture Loan</Link>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav mx-auto">
+              <ul className="navbar-nav ml-auto mx-auto">
                 <li className="nav-item">
                   <Link to="/Applyloan" className="nav-link" id='Applyloan'>Apply Loan</Link>
                 </li>
@@ -90,23 +89,27 @@ function Customerprofile() {
                   <Link to="/Loanstatus" className="nav-link" id='loanstatus'>Loan Status</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/Profile" className="nav-link" id='profile'><h4>Profile</h4></Link>
+                  <Link to="/Profile" className="nav-link text-warning fw-bolder fs-3" id='profile'>Profile</Link>
+                </li>
+                <li className="nav-item">
+                <Link to="/" className="nav-link" id='logout' onClick={handleLogout}>Logout</Link>
                 </li>
               </ul>
-              <Link to="/" className="nav-link" id='logout' onClick={handleLogout}>Logout</Link>
+             
             </div>
-          </div>
+          
           <Outlet />
         </nav>
-      </div>
-      <div className="profile-container">
-        <div className='d-flex justify-content-center align-items-center vh-90'>
-          <h3>Profile Information</h3>
+      
+      <div className="profile-container p-5">
+        <div className='d-flex justify-content-center align-items-center '>
+          <h1 className="text-light fs-1 fw-bolder">Profile Information</h1>
         </div>
         {user && (
       <>
         {editing ? 
           <form className="profile-form" key={user.Id} onSubmit={editUserProfile}>
+
             <div className="profile-row">
               <div className="profile-column">
                 <div className="profile-value">Name: <input type="text" name="Name" value={user.Name} onChange={handleInputChange} /></div>
@@ -114,26 +117,27 @@ function Customerprofile() {
               <div className="profile-column">
                 <div className="profile-value">Address: <input type="text" name="City" value={user.City} onChange={handleInputChange} /></div>
               </div>
-            </div>
-            <div className="profile-row">
+
               <div className="profile-column">
                 <div className="profile-value">Phone No: <input type="text" name="Mobile" value={user.Mobile} onChange={handleInputChange} /></div>
               </div>
               <div className="profile-column">
                 <div className="profile-value">Loan Id: {user.LoanApplicants[0].LoanId}</div>
               </div>
-            </div>
-            <div className="profile-row">
+
               <div className="profile-column">
                 <div className="profile-value">Email: {user.Email}</div>
               </div>
               <div className="profile-column">
                 <div className="profile-value">Monthly EMI: {emi}</div>
               </div>
+
             </div>
-            <div className='d-flex justify-content-center align-items-center'>
-              <button type="submit">Save</button>
-            </div>
+            
+            
+            
+              <button className="edit-button btn btn-primary btn-lg" type="submit">Save</button>
+          
           </form>
           :
           <>
@@ -144,26 +148,23 @@ function Customerprofile() {
               <div className="profile-column">
                 <div className="profile-value">Address: {user.City}</div>
               </div>
-            </div>
-            <div className="profile-row">
               <div className="profile-column">
                 <div className="profile-value">Phone No: {user.Mobile}</div>
               </div>
               <div className="profile-column">
                 <div className="profile-value">Loan Id: {user.LoanApplicants[0].LoanId}</div>
               </div>
-            </div>
-            <div className="profile-row">
               <div className="profile-column">
                 <div className="profile-value">Email: {user.Email}</div>
               </div>
               <div className="profile-column">
                 <div className="profile-value">Monthly EMI: {emi}</div>
               </div>
+           
             </div>
-            <div className='d-flex justify-content-center align-items-center'>
-              <button type="button" onClick={() => setEditing(!editing)}>Edit Profile</button>
-            </div>
+            
+              <button type="button" className="edit-button btn btn-primary btn-lg" onClick={() => setEditing(!editing)}>Edit Profile</button>
+            
           </>
         }
       </>

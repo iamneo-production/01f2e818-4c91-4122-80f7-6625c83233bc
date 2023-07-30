@@ -1,40 +1,16 @@
-.modal-backdrop {
-    /* bug fix - no overlay */    
-    display: none;    
+.body{
+  background-color:  #0f2324;
+  height: 300vh;
+  color: aliceblue;
 }
-.nav-link:active, .nav-link:focus, .nav-link:visited {
-    color: white !important;
-    font-size: larger !important;
-    font-weight: bold !important;
+.nav-types{
+  font-size: larger;
+  color: white;
 }
-.logout-btn {
-    background-color: #dc3545;
-    border-color: #dc3545;
-    size: 2cm;
-  }
-  .logout-btn:hover {
-    background-color: #c82333;
-    border-color: #bd2130;
-  }
-  .ms-auto {
-    padding-right: 1cm;
-  }
+
   
   .brand-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-right: 2cm;
-    font-size: larger;
+    padding-left:  100px;
+    padding-right: 100px;
+    color:white ;
   }
-  
-  .brand-subtext {
-    font-size: 1rem;
-    text-align: center;
-    justify-content: center;
-  }
-  
-  .mr-auto {
-    font-size: large;
-  }
-  

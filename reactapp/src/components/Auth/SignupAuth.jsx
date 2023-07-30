@@ -38,14 +38,24 @@ function SignupAuth(values) {
     } else {
         error.Username="";
     }
-  
+
     if (!values.mobileNumber) {
+      error.Mobile = "Mobile Number should not be empty";
+    } else if (!mobilenumber_pattern.test(values.mobileNumber)) {
+      error.Mobile = "Invalid Mobile Number format";
+    } else if (values.mobileNumber === "0000000000") {
+      error.Mobile = "Enter a valid mobile number";
+    } else {
+      error.Mobile = "";
+    }
+  
+    /*if (!values.mobileNumber) {
       error.Mobile = "Mobile Number should not be empty";
     } else if (!mobilenumber_pattern.test(values.mobileNumber)) {
       error.Mobile = "Invalid Mobile Number format";
     } else {
         error.Mobile="";
-    }
+    }*/
   
     if (!values.userRole) {
       error.Role = "admin/user should be selected";

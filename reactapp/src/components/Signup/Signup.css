@@ -1,10 +1,10 @@
 .SignupPage{
-    background-color: #c7d3e2;
+  background-color: #0f2324;
     height: 100vh;
   }
 
 .signupHead{
-    background-color: #3F5F73;       
+    background-color: rgb(57, 115, 202);       
   }
   
 .signupHead strong {
@@ -27,3 +27,14 @@
   /* bug fix - no overlay */    
   display: none;    
 }
+
+#loginButton
+{
+  background-color: rgb(57, 115, 202);
+}
+
+.leftside
+  {
+    padding-right: 40px;
+     
+  }

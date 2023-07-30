@@ -37,10 +37,10 @@ function Signup(){
             console.log(values);
     
             if (values.userRole === "User"){
-                postPromise = axios.post('https://8080-cdfbadaabbeabbcfdaafcbdaebccfbaabccd.project.examly.io/user/signup',values);
+                postPromise = axios.post('https://8080-eccfaacddbcfabeedbdebdadabbccceefdfb.project.examly.io/user/signup',values);
             }
             if (values.userRole === 'Admin') {
-                postPromise = axios.post('https://8080-cdfbadaabbeabbcfdaafcbdaebccfbaabccd.project.examly.io/admin/signup',values);
+                postPromise = axios.post('https://8080-eccfaacddbcfabeedbdebdadabbccceefdfb.project.examly.io/admin/signup',values);
             }
     
             postPromise.then(res => {
@@ -60,16 +60,20 @@ function Signup(){
     
     return(
         <>
-       
         
         <div className='d-flex justify-content-center align-items-center vh-90 SignupPage'>
+        <div className='leftside'>
+            <h1 className='text-light fw-bolder pr-4'>Agriculture Loan </h1>
+            <h1 className='text-light text-center fw-bold pr-4'>Application </h1>
+            
+        </div>
                 <div className='p-1 rounded w-25 signupForm'>
                 <form onSubmit={handleSubmit}>
-                <div className='d-flex justify-content-center align-items-center p-4 w-100 '>
-        <strong>Register</strong>
-        </div>
+                <div className='d-flex justify-content-center align-items-center p-4 w-100'>
+                <h1 className='text-light fs-1 fw-bolder'>Register</h1>
+                </div>
                         <div className='mb-3'>
-                            <select id="admin/user" name='userRole' onChange={handleInput} className='form-control rounded-0'>
+                            <select id="admin/user" name='userRole' onChange={handleInput} className='form-control rounded-2'>
                                 <option value=''>Select a Role</option>
                                 <option value='Admin'>Admin</option>
                                 <option value='User'>User</option>
@@ -78,39 +82,38 @@ function Signup(){
                         </div>
                         <div className='mb-3'>
                             <input type="email" id="email" placeholder='Enter Email' name='Email'
-                            onChange={handleInput} className='form-control rounded-0' autoComplete='off'/>
+                            onChange={handleInput} className='form-control rounded-2' autoComplete='off'/>
                             {errors.Email && <span className='text-danger'>{errors.Email}</span>}
                         </div>
                         <div className='mb-3'>
                             <input type="text" id="username" placeholder='Enter Username' name='username'
-                            onChange={handleInput} className='form-control rounded-0' autoComplete='off' disabled={role === 'Admin'}/>
+                            onChange={handleInput} className='form-control rounded-2' autoComplete='off' disabled={role === 'Admin'}/>
                             {errors.Username && <span className='text-danger'>{errors.Username}</span>}
                         </div>
                         <div className='mb-3'>
                             <input type="text" id="mobileNumber" placeholder='Enter Mobilenumber' name='mobileNumber'
-                            onChange={handleInput} className='form-control rounded-0' autoComplete='off'/>
+                            onChange={handleInput} className='form-control rounded-2' autoComplete='off'/>
                             {errors.Mobile && <span className='text-danger'>{errors.Mobile}</span>}
                         </div>
                         <div className='mb-3'>
                             <input type="password" id="password" placeholder='Password' name='Password'
-                            onChange={handleInput} className='form-control rounded-0' />
+                            onChange={handleInput} className='form-control rounded-2' />
                             {errors.Password && <span className='text-danger'>{errors.Password}</span>}
                         </div>
                         <div className='mb-3'>
                             <input type="password" id="confirmPassword" placeholder='Confirm Password' name='confirmPassword'
-                            onChange={handleInput} className='form-control rounded-0' />
+                            onChange={handleInput} className='form-control rounded-2' />
                             {errors.confirmPassword && <span className='text-danger'>{errors.confirmPassword}</span>}
                         </div>
                         <div>
                             <div className='col'>
-                                <button type='submit' id="loginButton" className='btn btn-success w-100 rounded-0'> Submit</button>
+                                <button type='submit' id="loginButton" className='btn btn-primary w-100 rounded-2'> Submit</button>
                             </div>
-                            <div className='d-flex justify-content-center'>
-                                <p>Already an user?</p>
+                            <div className='d-flex pt-3 justify-content-center'>
+                                <p className='text-light pr-3'>Already an user?</p>
                             </div>
-                            <div className='d-flex justify-content-center'>
-                                <Link to='/login' type="button" id='signupLink' className="btn btn-primary rounded-0"> Login </Link>
-                            </div>
+                            
+                                <Link to='/login' type="button" id='signupLink' className="btn btn-primary w-100 rounded-2"> Login </Link>
                             <Outlet/>
                         </div> 
                 </form>

@@ -1,10 +1,20 @@
 .body{
-    background-color: #E5E5E5;
+    background-color: #0f2324;
+    margin: 0;
+    height: 100vh;
 }
-.container-fluid {
-    background-color: #585088;
+.bg-color {
+    background-color: #0066ff;
+    padding-left:  200px;
+    padding-right: 200px;
 }
 
+main{
+   padding-top: 100px;
+}
+.album{
+    padding-top: 100px;
+}
 .navbar-brand{
     font-size: 40px;
     color: white;

@@ -1,15 +1,12 @@
-.loginHead{
-    background-color: #3F5F73;       
+.loginPage{
+  background-color: #0f2324;
   }
   
   .loginHead strong {
     color: white;
     font-size: 2rem;
   }
-  
-  #loginButton {
-    background-color: #3F5F73;
-  }
+ 
   
   #email {
     width: 100%;
@@ -25,9 +22,7 @@
   #singupLink {
     width: auto;
   }
-  .loginPage{
-    background-color: #c7d3e2;
-  }
+  
   .button-group {
     text-align: center;
   }
@@ -35,3 +30,9 @@
   .button-item:not(:last-child) {
     margin-right: 20px;
   }  
+
+  .leftside
+  {
+    padding-right: 40px;
+     
+  }

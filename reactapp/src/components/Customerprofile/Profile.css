@@ -1,5 +1,10 @@
+.bg-color {
+  background-color: #0066ff;
+  padding-left:  200px;
+  padding-right: 200px;
+}
 profile-form {
-    background-color: #8868a1;
+    background-color: #465162;
     padding: 155px;
   }
   
@@ -7,23 +12,24 @@ profile-form {
     color: white;
   }
   .profile-container {
-    padding: 35px;
-    background-color: #8868a1;
-    align-items: flex-start;
+    padding-top: 35px;
+    background-color: #0f2324;
+    height: 100vh;
+    
   }
   
   .profile-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    width: 500px;
     margin-bottom: 10px;
+    margin-left: 500px;
+    
   }
   
   .profile-column {
-    display: flex;
-    flex-direction: column;
+ 
+width:500px ;
     padding: 15px;
-    flex: 1;
+  
   }
   
   .profile-value {
@@ -36,4 +42,6 @@ profile-form {
     font-weight: bolder;
     margin-right: 100px;
   }
-  
+  .edit-button{
+    margin-left: 520px;
+  }
