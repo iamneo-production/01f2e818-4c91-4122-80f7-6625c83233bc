@@ -19,7 +19,7 @@ function Login() {
     const navigate = useNavigate()
 
     const { setIsAuthenticated } = useContext(AuthContext);
-    //const { isAuthenticated } = useContext(AuthContext);
+    const { isAuthenticated } = useContext(AuthContext);
     
     const [errors, setError] = useState('')
     

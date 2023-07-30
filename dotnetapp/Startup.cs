@@ -12,7 +12,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Serialization;
 using Microsoft.EntityFrameworkCore.SqlServer;
+using dotnetapp.Models;
+using dotnetapp.Interfaces.Services;
+using dotnetapp.Services;
 
 namespace dotnetapp
 {
@@ -28,10 +32,30 @@ namespace dotnetapp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //string connectionString = Configuration.GetConnectionString("myconnstring");
-           // services.AddDbContext<ProductDBContext>(opt => opt.UseSqlServer(connectionString));
-           // services.AddScoped<IProductService, ProductService>();
-            services.AddCors();
+            //Database name is 'businessloan'. Connection string can be modified. See Project info.
+            string connectionString = Configuration.GetConnectionString("myconnstring");
+            services.AddDbContext<ProductDBContext>(opt => opt.UseSqlServer(connectionString));
+
+            //Password Hasher Interface
+            services.AddScoped<IPasswordHasher, PasswordHasher>();
+
+            //CORS which allows All Origins, Headers and Methods
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", 
+                    builder =>
+                    {
+                        builder
+                        .AllowAnyOrigin() 
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                    });
+            });
+
+            //JSON Serializer
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore).AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -51,6 +75,8 @@ namespace dotnetapp
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("AllowAll");
 
             app.UseRouting();
 
