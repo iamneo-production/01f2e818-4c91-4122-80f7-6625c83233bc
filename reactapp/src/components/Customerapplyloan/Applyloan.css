@@ -1,0 +1,46 @@
+.ApplyloanPage{
+    background-color: #c7d3e2;
+    height: 100vh;
+  }
+  
+  .ApplyloanHead{
+    background-color: #fafafb;       
+  }
+  
+  .Applyloanstrong {
+    color: white;
+    font-size: 2rem;
+  }
+  #months{
+    width: 100%;
+  }
+  #mobileNumber{
+    width: 100%;
+  }
+  #confirmPassword{
+    width: 100%;
+  }
+  #enterName{
+    width: 100%;
+  }
+  #months{
+    width: 100%;
+  }
+  #salary{
+    width: 100%;
+  }
+  #enterAddress{
+    width: 100%;
+  }
+  .ApplyloanForm::-webkit-scrollbar {
+    width: 10px; /* Adjust scrollbar width */
+  }
+  
+  .ApplyloanForm::-webkit-scrollbar-thumb {
+    background: #888; /* Make scrollbar darker */
+    border-radius: 10px; /* Give scrollbar rounded corners */
+  }
+  
+  .ApplyloanForm::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darken scrollbar when hovered */
+  }

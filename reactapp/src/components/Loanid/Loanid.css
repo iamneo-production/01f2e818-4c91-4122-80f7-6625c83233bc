@@ -1,0 +1,38 @@
+.ApplyloanPage{
+    background-color: #c7d3e2;
+    height: 100vh;
+  }
+.success{
+    text-align:center;
+    width:100%;
+    padding:200px;
+}
+  .LoanidHead{
+    background-color: #3F5F73;       
+  }
+  
+  .Applyloan strong {
+    color: white;
+    font-size: 2rem;
+  }
+  #months{
+    width: 100%;
+  }
+  #mobileNumber{
+    width: 100%;
+  }
+  #confirmPassword{
+    width: 100%;
+  }
+  #enterName{
+    width: 100%;
+  }
+  #months{
+    width: 100%;
+  }
+  #salary{
+    width: 100%;
+  }
+  #enterAddress{
+    width: 100%;
+  }

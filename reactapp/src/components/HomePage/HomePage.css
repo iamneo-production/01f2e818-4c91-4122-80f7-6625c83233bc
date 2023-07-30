@@ -1,0 +1,55 @@
+.body{
+    background-color: #E5E5E5;
+}
+.container-fluid {
+    background-color: #585088;
+}
+
+.navbar-brand{
+    font-size: 40px;
+    color: white;
+}
+#homeButton{
+    font-size: 20px;
+    color: white;
+
+}
+#Applyloan{
+    font-size: 20px;
+    color: white;
+}
+#loanstatus{
+    font-size: 20px;
+    color: white;
+
+}
+#profile{
+    font-size: 20px;
+    color: white;
+
+}
+#myBookingButton{
+    font-size: 20px;
+    color: white;
+}
+#logout{
+    font-size: 20px;
+    color: white;
+
+}
+.center-form{
+    justify-content: center;
+    display: flex;
+    border-radius: 0;
+    margin: 30px 300px;
+    padding: 30px;   
+}
+.form-control{
+    border-radius: 0;
+    justify-content: center;
+}
+
+#searchButton{
+    background-color: #6050BF;
+    border-radius: 0;
+}
