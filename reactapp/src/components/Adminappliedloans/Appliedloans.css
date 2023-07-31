@@ -1,0 +1,17 @@
+.nav-types{
+  font-size: larger;
+  color: white;
+}
+
+  
+  .brand-container {
+    padding-left:  100px;
+    padding-right: 100px;
+  }
+  
+  .most{
+    background-color:  #0f2324;
+    height: fit-content;
+    padding-bottom: 30px;
+    
+  }

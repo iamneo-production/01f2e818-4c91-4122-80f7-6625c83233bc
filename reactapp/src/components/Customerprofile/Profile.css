@@ -1,0 +1,47 @@
+.bg-color {
+  background-color: #0066ff;
+  padding-left:  200px;
+  padding-right: 200px;
+}
+profile-form {
+    background-color: #465162;
+    padding: 155px;
+  }
+  
+  .profile-container h3 {
+    color: white;
+  }
+  .profile-container {
+    padding-top: 35px;
+    background-color: #0f2324;
+    height: 100vh;
+    
+  }
+  
+  .profile-row {
+    width: 500px;
+    margin-bottom: 10px;
+    margin-left: 500px;
+    
+  }
+  
+  .profile-column {
+ 
+width:500px ;
+    padding: 15px;
+  
+  }
+  
+  .profile-value {
+    background-color: #F0F0F0;
+    padding: 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bolder;
+    margin-right: 100px;
+  }
+  .edit-button{
+    margin-left: 520px;
+  }

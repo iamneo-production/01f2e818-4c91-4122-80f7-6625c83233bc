@@ -1,0 +1,16 @@
+.body{
+  background-color:  #0f2324;
+  height: 300vh;
+  color: aliceblue;
+}
+.nav-types{
+  font-size: larger;
+  color: white;
+}
+
+  
+  .brand-container {
+    padding-left:  100px;
+    padding-right: 100px;
+    color:white ;
+  }
